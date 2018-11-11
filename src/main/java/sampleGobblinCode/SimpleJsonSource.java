@@ -51,4 +51,8 @@ public class SimpleJsonSource implements Source<String, String>{
         System.out.println("The system has shut down.");
         System.exit(0);
     }
+
+    public static void main(String[] args) {
+        System.out.println("This is Source's main method. You better get that!.");
+    }
 }
