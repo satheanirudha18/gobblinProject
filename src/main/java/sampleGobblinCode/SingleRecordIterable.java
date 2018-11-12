@@ -18,7 +18,6 @@ public class SingleRecordIterable<T> implements Iterable<T>{
         this.value = value;
     }
 
-    //adding iterator
     public Iterator<T> iterator() {
         return Iterators.singletonIterator(this.value);
     }
