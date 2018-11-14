@@ -4,9 +4,9 @@ package com.gobblin.core;
  * Created by Anirudha Sathe on 13/11/18.
  */
 
-import com.google.common.base.Splitter;
+
 import com.google.common.collect.Lists;
-import org.apache.gobblin.source.Source;
+import com.gobblin.api.Source;
 import org.apache.gobblin.configuration.ConfigurationKeys;
 import org.apache.gobblin.configuration.SourceState;
 import org.apache.gobblin.configuration.WorkUnitState;
@@ -62,7 +62,4 @@ public class EventSource implements Source<String, String> {
         System.exit(0);
     }
 
-    public static void main(String[] args) {
-        System.out.println("This is the Source class main method. Do not touch it.");
-    }
 }

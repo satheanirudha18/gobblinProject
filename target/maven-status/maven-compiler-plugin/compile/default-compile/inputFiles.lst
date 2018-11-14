@@ -2,6 +2,7 @@
 /home/exa0051/gobblinProject/src/main/java/com/gobblin/core/SingleRecordIterable.java
 /home/exa0051/gobblinProject/src/main/java/sampleGobblinCode/ToAvroBaseConverter.java
 /home/exa0051/gobblinProject/src/main/java/sampleGobblinCode/SimpleJsonSource.java
+/home/exa0051/gobblinProject/src/main/java/com/gobblin/api/Source.java
 /home/exa0051/gobblinProject/src/main/java/com/gobblin/core/EventSource.java
 /home/exa0051/gobblinProject/src/main/java/com/gobblin/core/ToAvroBaseConverter.java
 /home/exa0051/gobblinProject/src/main/java/com/gobblin/eventful/RefineInputs.java
