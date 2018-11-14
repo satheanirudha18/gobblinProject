@@ -41,8 +41,8 @@ qualitychecker.row.err.file=test/jobOutput
 mr.job.root.dir=file:///root/gobblin/eventDir/working
 state.store.dir=file:///root/gobblin/eventDir/state-store
 task.data.root.dir=file:///root/gobblin/eventDir/task-data
-writer.staging.dir=file:///root/gobblin/eventDir/task-staging
-writer.output.dir=file:///root/gobblin/eventDir/task-output
+# writer.staging.dir=file:///root/gobblin/eventDir/task-staging
+# writer.output.dir=file:///root/gobblin/eventDir/task-output
 data.publisher.final.dir=file:///root/gobblin/eventDir
 
 # custom properties
