@@ -1,0 +1,79 @@
+################ Eventful Job Pull ##############
+
+job.name=EventfulDemo
+job.group=demo
+job.description=A Gobblin plugin that extracts the data from Eventful API in XML or JSON.
+
+source.class=com.gobblin.core.EventSource
+converter.classes=com.gobblin.core.EventConverter
+extract.namespace=com.gobblin.core.EventExtractor
+
+# source configuartion properties
+# comma-separated list of file URIs (supporting different schemes eg., file://, ftp://, http://, sftp://, etc)
+source.filebased.files.to.pull=http://api.eventful.com/
+
+# whether to use authentication or not (default is false)
+source.conn.use.authentication=false
+
+# credential for authentication purpose (optional)
+source.conn.domain=
+source.conn.username=
+source.conn.password=
+
+# source data schema
+source.schema=source.schema={"namespace":"example.json","type":"record","name":"Events","fields":[{"name":"last_item","type":"string"},{"name":"total_items","type":"string"},{"name":"first_item","type":"string"},{"name":"page_number","type":"string"},{"name":"page_size","type":"string"},{"name":"page_items","type":"string"},{"name":"search_time","type":"string"},{"name":"page_count","type":"string"},{"name":"events""type":"record","fields":[{"name":"event","type":"record","fields":[{"name":"watching_count","type":"string"},{"name":"olson_path","type":"string"},{"name":"calendar_count","type":"string"},{"name":"comment_count","type":"string"},{"name":"region_abbr","type":"string"},{"name":"postal_code","type":"string"},{"name":"going_count","type":"string"},{"name":"all_day","type":"string"},{"name":"latitude","type":"string"},{"name":"groups","type":"string"},{"name":"url","type":"string"},{"name":"id","type":"string"},{"name":"privacy","type":"string"},{"name":"city_name","type":"string"},{"name":"link_count","type":"string"},{"name":"longitude","type":"string"},{"name":"country_name","type":"string"},{"name":"country_abbr","type":"string"},{"name":"region_name","type":"string"},{"name":"start_time","type":"string"},{"name":"tz_id","type":"string"},{"name":"description","type":"string"},{"name":"modified","type":"string"},{"name":"venue_display","type":"string"},{"name":"tz_country","type":"string"},{"name":"performers","type":"string"},{"name":"title","type":"string"},{"name":"venue_address","type":"string"},{"name":"geocode_type","type":"string"},{"name":"tz_olson_path","type":"string"},{"name":"recur_string","type":"string"},{"name":"calendars","type":"string"},{"name":"owner","type":"string"},{"name":"going","type":"string"},{"name":"country_abbr2","type":"string"},{"name":"image","type":"record","fields":[{"name":"small","type":"record","fields":[{"name":"width","type":"string"},{"name":"url","type":"string"},{"name":"height","type":"string"}]},{"name":"width","type":"string"},{"name":"caption","type":"string"},{"name":"medium","type":"record","fields":[{"name":"width","type":"string"},{"name":"url","type":"string"},{"name":"height","type":"string"}]},{"name":"url","type":"string"},{"name":"thumb","type":"record","fields":[{"name":"width","type":"string"},{"name":"url","type":"string"},{"name":"height","type":"string"}]},{"name":"height","type":"string"}]},{"name":"created","type":"string"},{"name":"venue_id","type":"string"},{"name":"tz_city","type":"string"},{"name":"stop_time","type":"string"},{"name":"venue_name","type":"string"},{"name":"venue_url","type":"string"}]}]}]}
+
+# writer configuration
+# writer.destination.type=HDFS
+writer.output.format=AVRO
+writer.fs.uri=file:///
+
+# data publisher class to be used
+data.publisher.type=org.apache.gobblin.publisher.BaseDataPublisher
+
+# quality checker configuration properties
+qualitychecker.task.policies=org.apache.gobblin.policies.count.RowCountPolicy,org.apache.gobblin.policies.schema.SchemaCompatibiltyPolicy
+qualitychecker.task.policy.types=OPTIONAL,OPTIONAL
+qualitychecker.row.policies=org.apache.gobblin.policies.schema.SchemaRowCheckPolicy
+qualitychecker.row.policy.types=OPTIONAL
+qualitychecker.row.err.file=test/jobOutput
+
+mr.job.root.dir=file:///root/gobblin/eventDir/working
+state.store.dir=file:///root/gobblin/eventDir/state-store
+task.data.root.dir=file:///root/gobblin/eventDir/task-data
+writer.staging.dir=file:///root/gobblin/eventDir/task-staging
+writer.output.dir=file:///root/gobblin/eventDir/task-output
+data.publisher.final.dir=file:///root/gobblin/eventDir
+
+# custom properties
+eventful.app.key=MdMJcrMXmcS5bNdj
+search.type=events
+custom.input.type=json
+
+events.keywords=music
+events.location=San Diego
+events.date=2018-05-20
+events.category=
+events.exclude.category=
+events.within=
+events.units=
+events.count.only=
+events.page.size=
+events.page.number=
+events.sort.order=
+events.sort.direction=
+events.image.size=
+events.language=
+events.mature=
+events.include=
+events.change.multi.day.start=
+
+venues.keywords=restaurant
+venues.location=San Diego
+venues.count.only=
+venues.page.size=
+venues.page.number=
+venues.sort.order=
+venues.sort.direction=
+venues.within=
+venues.units=
