@@ -3,8 +3,8 @@ package com.gobblin.core;
 import com.gobblin.eventful.RefineInputs;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.gobblin.configuration.ConfigurationKeys;
-import org.apache.gobblin.configuration.WorkUnitState;
+import gobblin.configuration.ConfigurationKeys;
+import gobblin.configuration.WorkUnitState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
