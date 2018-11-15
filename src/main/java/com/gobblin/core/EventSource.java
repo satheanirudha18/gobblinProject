@@ -40,7 +40,7 @@ public class EventSource implements Source<String, String> {
          */
         WorkUnitState workstate = new WorkUnitState();
         EventWrapper eventWrapper = new EventWrapper(workstate);
-        String urlToPull = state.getProp(eventWrapper.getCustomProperties());
+        String urlToPull = state.getProp(ConfigurationKeys.SOURCE_FILEBASED_FILES_TO_PULL);
 
         /*
         create a workunit for URL to pull
