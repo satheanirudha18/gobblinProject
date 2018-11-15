@@ -1,16 +1,9 @@
 com/gobblin/core/EventSource.class
-com/gobblin/core/EventExtractor.class
-sampleGobblinCode/SimpleJsonExtractor.class
-sampleGobblinCode/SimpleJsonConverter$1.class
-sampleGobblinCode/SimpleJsonSource.class
-sampleGobblinCode/SingleRecordIterable.class
-sampleGobblinCode/ToAvroBaseConverter.class
 com/gobblin/core/SingleRecordIterable.class
+com/gobblin/core/EventExtractor.class
 com/gobblin/eventful/RefineInputs.class
 com/gobblin/core/ToAvroBaseConverter.class
 com/gobblin/core/EventWrapper.class
 com/gobblin/eventful/EventfulSource.class
 com/gobblin/core/EventConverter.class
-sampleGobblinCode/SampleJsonCode.class
-sampleGobblinCode/SimpleJsonConverter.class
 com/gobblin/core/EventConverter$1.class

@@ -17,13 +17,6 @@
             <version>11.0.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.gobblin/gobblin-api -->
-        <dependency>
-            <groupId>org.apache.gobblin</groupId>
-            <artifactId>gobblin-api</artifactId>
-            <version>0.13.0</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/com.linkedin.gobblin/gobblin-api -->
         <dependency>
             <groupId>com.linkedin.gobblin</groupId>
