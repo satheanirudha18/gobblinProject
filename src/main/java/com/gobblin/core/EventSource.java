@@ -4,15 +4,14 @@ package com.gobblin.core;
  * Created by Anirudha Sathe on 13/11/18.
  */
 
-
 import com.google.common.collect.Lists;
-import org.apache.gobblin.source.Source;
-import org.apache.gobblin.configuration.ConfigurationKeys;
-import org.apache.gobblin.configuration.SourceState;
-import org.apache.gobblin.configuration.WorkUnitState;
-import org.apache.gobblin.source.extractor.Extractor;
-import org.apache.gobblin.source.workunit.Extract;
-import org.apache.gobblin.source.workunit.WorkUnit;
+import gobblin.source.Source;
+import gobblin.configuration.ConfigurationKeys;
+import gobblin.configuration.SourceState;
+import gobblin.configuration.WorkUnitState;
+import gobblin.source.extractor.Extractor;
+import gobblin.source.workunit.Extract;
+import gobblin.source.workunit.WorkUnit;
 
 import java.io.IOException;
 import java.util.List;
@@ -46,7 +45,7 @@ public class EventSource implements Source<String, String> {
         /*
         create a workunit for URL to pull
          */
-        WorkUnit workUnit = WorkUnit.create(extract);
+        WorkUnit workUnit = (WorkUnit) WorkUnit.create(extract);
         workUnit.setProp(SOURCE_PAGE_KEY, urlToPull);
         workUnits.add(workUnit);
 
