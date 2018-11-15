@@ -6,7 +6,7 @@ package com.gobblin.core;
 
 
 import com.google.common.collect.Lists;
-import com.gobblin.api.Source;
+import org.apache.gobblin.source.Source;
 import org.apache.gobblin.configuration.ConfigurationKeys;
 import org.apache.gobblin.configuration.SourceState;
 import org.apache.gobblin.configuration.WorkUnitState;

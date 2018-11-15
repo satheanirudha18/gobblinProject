@@ -1,6 +1,5 @@
 com/gobblin/core/EventSource.class
 com/gobblin/core/EventExtractor.class
-com/gobblin/api/Source.class
 sampleGobblinCode/SimpleJsonExtractor.class
 sampleGobblinCode/SimpleJsonConverter$1.class
 sampleGobblinCode/SimpleJsonSource.class
