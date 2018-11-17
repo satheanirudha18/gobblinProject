@@ -37,8 +37,6 @@ public class EventExtractor implements Extractor<String, String> {
 
     private final WorkUnitState workUnitState;
 
-    private final FileObject fileObject;
-
     private BufferedReader bufferedReader;
 
     private final HttpClient client;
@@ -61,18 +59,18 @@ public class EventExtractor implements Extractor<String, String> {
             DefaultFileSystemConfigBuilder.getInstance().setUserAuthenticator(opts, auth);
             this.fileObject = VFS.getManager().resolveFile(workUnitState.getProp(SOURCE_PAGE_KEY));
         }*/
-        if (!workUnitState.getPropAsBoolean(ConfigurationKeys.SOURCE_CONN_USE_AUTHENTICATION, false)) {
-            this.fileObject = VFS.getManager().resolveFile(workUnitState.getProp(SOURCE_PAGE_KEY));
-        }else{
-            this.fileObject = VFS.getManager().resolveFile(workUnitState.getProp(SOURCE_PAGE_KEY));
-        }
-
         /*
         Custom logic for the extraction of data starts
          */
         this.client = new DefaultHttpClient();
 
-        this.request = new HttpGet(this.fileObject.getURL().toString());
+        String url= workUnitState.getProp(SOURCE_PAGE_KEY);
+
+        if (!workUnitState.getPropAsBoolean(ConfigurationKeys.SOURCE_CONN_USE_AUTHENTICATION, false)) {
+            this.request = new HttpGet(url);
+        }else{
+            this.request = new HttpGet(url);
+        }
 
         this.response = this.client.execute(this.request);
 
@@ -122,10 +120,7 @@ public class EventExtractor implements Extractor<String, String> {
             LOGGER.error("Failed to close the file object - ", ie);
         }
 
-        try {
-            this.fileObject.close();
-        }catch (IOException ie) {
-            LOGGER.error("Failed to close the file object - ", ie);
-        }
+        this.request.abort();
+
     }
 }
