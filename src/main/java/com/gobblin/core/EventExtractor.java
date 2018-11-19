@@ -6,11 +6,11 @@ package com.gobblin.core;
 
 import com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable;
 import org.apache.commons.vfs2.*;
-import gobblin.configuration.ConfigurationKeys;
-import gobblin.configuration.WorkUnitState;
+import org.apache.gobblin.configuration.ConfigurationKeys;
+import org.apache.gobblin.configuration.WorkUnitState;
 import gobblin.password.PasswordManager;
-import gobblin.source.extractor.Extractor;
-import gobblin.source.extractor.DataRecordException;
+import org.apache.gobblin.source.extractor.Extractor;
+import org.apache.gobblin.source.extractor.DataRecordException;
 
 import com.google.common.io.Closer;
 
