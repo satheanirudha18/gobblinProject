@@ -30,6 +30,21 @@
             <version>0.13.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.gobblin/gobblin-core -->
+        <dependency>
+            <groupId>org.apache.gobblin</groupId>
+            <artifactId>gobblin-core</artifactId>
+            <version>0.13.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.gobblin/gobblin-utility -->
+        <dependency>
+            <groupId>org.apache.gobblin</groupId>
+            <artifactId>gobblin-utility</artifactId>
+            <version>0.13.0</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-vfs2 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
