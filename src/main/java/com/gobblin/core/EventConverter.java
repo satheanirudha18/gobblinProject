@@ -36,8 +36,9 @@ public class EventConverter extends ToAvroBaseConverter<String, JsonObject>{
     //private static final Type FIELD_ENTRY_TYPE = new TypeToken<Map<String, Object>>() {}.getType();
     @Override
     public Schema convertSchema(String inputSchema, WorkUnitState workUnitState) throws SchemaConversionException {
-        Preconditions.checkArgument(workUnitState.contains(ConfigurationKeys.CONVERTER_AVRO_SCHEMA_KEY));
-        this.schema = new Schema.Parser().parse(workUnitState.getProp(ConfigurationKeys.CONVERTER_AVRO_SCHEMA_KEY));
+        Preconditions.checkArgument(workUnitState.contains(ConfigurationKeys.SOURCE_SCHEMA));
+        //this.schema = new Schema.Parser().parse(workUnitState.getProp(ConfigurationKeys.CONVERTER_AVRO_SCHEMA_KEY));
+        this.schema = new Schema.Parser().parse(inputSchema);
         return this.schema;
     }
 

@@ -6,4 +6,3 @@ com/gobblin/core/ToAvroBaseConverter.class
 com/gobblin/core/EventWrapper.class
 com/gobblin/eventful/EventfulSource.class
 com/gobblin/core/EventConverter.class
-com/gobblin/core/EventConverter$1.class
